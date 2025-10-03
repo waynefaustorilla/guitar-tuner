@@ -1,2 +1,31 @@
+# IDEs
 .idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# PyInstaller
+build/
+dist/
+*.spec
+*.manifest
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific
+*.log
