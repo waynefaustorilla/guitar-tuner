@@ -1,6 +1,8 @@
 import customtkinter as ctk
 from typing import Callable
 
+from models import StringNameFormatter
+
 
 class StringSelector:
     def __init__(self, parent, string_names: list, on_string_change: Callable[[str], None]):
@@ -22,6 +24,9 @@ class StringSelector:
         self.buttons = {}
         self._create_string_buttons(string_names)
 
+    def _get_display_name(self, internal_name):
+        return StringNameFormatter.get_display_name(internal_name)
+
     def _create_string_buttons(self, string_names):
         for btn in self.buttons.values():
             btn.destroy()
@@ -33,8 +38,9 @@ class StringSelector:
         for i, name in enumerate(string_names):
             color = colors[i % len(colors)]
             hover = self._darken_color(color)
+            display_name = self._get_display_name(name)
 
-            btn = ctk.CTkButton(self.button_container, text=name, command=lambda n=name: self._on_button_click(n), font=("Segoe UI", 14, "bold"), fg_color=color, hover_color=hover, height=45, corner_radius=10)
+            btn = ctk.CTkButton(self.button_container, text=display_name, command=lambda n=name: self._on_button_click(n), font=("Segoe UI", 14, "bold"), fg_color=color, hover_color=hover, height=45, corner_radius=10)
 
             btn.pack(side="left", padx=5, pady=10, expand=True, fill="x")
             self.buttons[name] = btn

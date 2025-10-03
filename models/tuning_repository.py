@@ -1,88 +1,89 @@
 from typing import Dict
 from .tuning_preset import TuningPreset
+from config import NoteFrequencies as NF
 
 
 class TuningRepository:
     def __init__(self):
         self._presets = self._initialize_presets()
-    
+
     def _initialize_presets(self) -> Dict[str, TuningPreset]:
         return {
             'Standard (E A D G B E)': TuningPreset(
                 'Standard (E A D G B E)',
                 {
-                    'E (Low)': 82.41,
-                    'A': 110.00,
-                    'D': 146.83,
-                    'G': 196.00,
-                    'B': 246.94,
-                    'E (High)': 329.63
+                    'E (Low)': NF.E2,
+                    'A': NF.A2,
+                    'D': NF.D3,
+                    'G': NF.G3,
+                    'B': NF.B3,
+                    'E (High)': NF.E4
                 }
             ),
             'Drop D (D A D G B E)': TuningPreset(
                 'Drop D (D A D G B E)',
                 {
-                    'D (Low)': 73.42,
-                    'A': 110.00,
-                    'D': 146.83,
-                    'G': 196.00,
-                    'B': 246.94,
-                    'E (High)': 329.63
+                    'D (Low)': NF.D2,
+                    'A': NF.A2,
+                    'D': NF.D3,
+                    'G': NF.G3,
+                    'B': NF.B3,
+                    'E (High)': NF.E4
                 }
             ),
             'Drop C (C G C F A D)': TuningPreset(
                 'Drop C (C G C F A D)',
                 {
-                    'C (Low)': 65.41,
-                    'G': 98.00,
-                    'C': 130.81,
-                    'F': 174.61,
-                    'A': 220.00,
-                    'D (High)': 293.66
+                    'C (Low)': NF.C2,
+                    'G': NF.G2,
+                    'C': NF.C3,
+                    'F': NF.F3,
+                    'A': NF.A3,
+                    'D (High)': NF.D4
                 }
             ),
             'Half Step Down (Eb Ab Db Gb Bb Eb)': TuningPreset(
                 'Half Step Down (Eb Ab Db Gb Bb Eb)',
                 {
-                    'Eb (Low)': 77.78,
-                    'Ab': 103.83,
-                    'Db': 138.59,
-                    'Gb': 185.00,
-                    'Bb': 233.08,
-                    'Eb (High)': 311.13
+                    'Eb (Low)': NF.Eb2,
+                    'Ab': NF.Ab3,
+                    'Db': NF.Db3,
+                    'Gb': NF.Gb3,
+                    'Bb': NF.Bb3,
+                    'Eb (High)': NF.Eb4
                 }
             ),
             'Open G (D G D G B D)': TuningPreset(
                 'Open G (D G D G B D)',
                 {
-                    'D (Low)': 73.42,
-                    'G': 98.00,
-                    'D': 146.83,
-                    'G (High)': 196.00,
-                    'B': 246.94,
-                    'D (High)': 293.66
+                    'D (Low)': NF.D2,
+                    'G': NF.G2,
+                    'D': NF.D3,
+                    'G (High)': NF.G3,
+                    'B': NF.B3,
+                    'D (High)': NF.D4
                 }
             ),
             'Open D (D A D F# A D)': TuningPreset(
                 'Open D (D A D F# A D)',
                 {
-                    'D (Low)': 73.42,
-                    'A': 110.00,
-                    'D': 146.83,
-                    'F#': 185.00,
-                    'A (High)': 220.00,
-                    'D (High)': 293.66
+                    'D (Low)': NF.D2,
+                    'A': NF.A2,
+                    'D': NF.D3,
+                    'F#': NF.Gb3,
+                    'A (High)': NF.A3,
+                    'D (High)': NF.D4
                 }
             ),
             'DADGAD (D A D G A D)': TuningPreset(
                 'DADGAD (D A D G A D)',
                 {
-                    'D (Low)': 73.42,
-                    'A': 110.00,
-                    'D': 146.83,
-                    'G': 196.00,
-                    'A (High)': 220.00,
-                    'D (High)': 293.66
+                    'D (Low)': NF.D2,
+                    'A': NF.A2,
+                    'D': NF.D3,
+                    'G': NF.G3,
+                    'A (High)': NF.A3,
+                    'D (High)': NF.D4
                 }
             )
         }

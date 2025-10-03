@@ -5,12 +5,16 @@ from .frequency_detector import FrequencyDetector
 
 
 class FFTFrequencyDetector(FrequencyDetector):
-    def __init__(self, sample_rate: int, chunk_size: int,
-                 min_frequency: float = 50.0, max_frequency: float = 1000.0):
+    def __init__(self, sample_rate: int, chunk_size: int, min_frequency: float = 50.0, max_frequency: float = 1000.0):
         self.sample_rate = sample_rate
         self.chunk_size = chunk_size
         self.min_frequency = min_frequency
         self.max_frequency = max_frequency
+
+    def set_frequency_range(self, min_frequency: float, max_frequency: float):
+        self.min_frequency = min_frequency
+        self.max_frequency = max_frequency
+
     def detect_frequency(self, audio_data: np.ndarray) -> Optional[float]:
         windowed = audio_data * np.hanning(len(audio_data))
         fft = np.abs(np.fft.rfft(windowed))

@@ -1,21 +1,17 @@
 import customtkinter as ctk
 from tkinter import messagebox
 from typing import Dict, Callable
-import sys
-import os
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from models import CustomTuning, NoteFrequencyConverter
+from models import CustomTuning, NoteFrequencyConverter, StringNameFormatter
 
 
 class CustomTuningDialog:
-    def __init__(self, parent, current_strings: Dict[str, float], on_apply: Callable[[CustomTuning], None]):
+    def __init__(self, parent, current_strings: Dict[str, float], on_apply: Callable[[CustomTuning], None], converter: NoteFrequencyConverter):
         self.parent = parent
         self.current_strings = current_strings.copy()
         self.on_apply = on_apply
         self.window = None
-        self.converter = NoteFrequencyConverter()
+        self.converter = converter
         self.string_note_selectors = {}
     
     def show(self):
@@ -99,13 +95,22 @@ class CustomTuningDialog:
 
     def _apply_custom_tuning(self):
         try:
-            new_strings = {}
+            string_order = list(self.string_note_selectors.keys())
+            note_octave_pairs = []
 
-            for string_name, (note_combo, octave_combo, _) in self.string_note_selectors.items():
+            for string_name in string_order:
+                note_combo, octave_combo, _ = self.string_note_selectors[string_name]
                 note = note_combo.get()
                 octave = int(octave_combo.get())
+                note_octave_pairs.append((note, octave))
+
+            string_names = StringNameFormatter.create_unique_string_names(note_octave_pairs)
+
+            new_strings = {}
+            for i, internal_name in enumerate(string_names.keys()):
+                note, octave = note_octave_pairs[i]
                 freq = self.converter.note_to_frequency(note, octave)
-                new_strings[string_name] = freq
+                new_strings[internal_name] = freq
 
             custom_tuning = CustomTuning(new_strings)
 

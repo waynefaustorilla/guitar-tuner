@@ -4,6 +4,8 @@ from .custom_tuning import CustomTuning
 from .note_frequency_converter import NoteFrequencyConverter
 from .instrument import Instrument
 from .instrument_repository import InstrumentRepository
+from .tuner_state import TunerState
+from .string_name_formatter import StringNameFormatter
 
 __all__ = [
     'TuningPreset',
@@ -11,5 +13,7 @@ __all__ = [
     'CustomTuning',
     'NoteFrequencyConverter',
     'Instrument',
-    'InstrumentRepository'
+    'InstrumentRepository',
+    'TunerState',
+    'StringNameFormatter'
 ]

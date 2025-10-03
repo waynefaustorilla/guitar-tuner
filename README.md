@@ -146,18 +146,18 @@ guitar-tuner/
 ## 🔧 Technical Details
 
 ### Audio Processing
-- **Sample Rate**: 44,100 Hz
-- **Chunk Size**: 4,096 samples
-- **Algorithm**: Fast Fourier Transform (FFT)
-- **Frequency Ranges**: 
+- **Sample Rate**: 44,100 Hz - Faster than a leap of faith
+- **Chunk Size**: 4,096 samples - Precision in every strike
+- **Algorithm**: Fast Fourier Transform (FFT) - Mathematical assassination of noise
+- **Frequency Ranges**:
   - Acoustic/Electric Guitar: 60-400 Hz
   - Bass Guitar: 30-150 Hz
   - Ukulele: 140-550 Hz
 
 ### Tuning Accuracy
-- **In Tune**: ±3 Hz
-- **Close**: ±15 Hz
-- **Out of Tune**: >15 Hz
+- **In Tune**: ±3 Hz - Perfect synchronization achieved
+- **Close**: ±15 Hz - Target in sight
+- **Out of Tune**: >15 Hz - Requires immediate action
 
 ### Technologies Used
 - **Python 3.7+**
@@ -168,9 +168,9 @@ guitar-tuner/
 
 ### Tested Hardware
 This application has been thoroughly tested with:
-- **Squier Stratocaster** - Electric guitar
-- **JCraft S3** - Electric guitar
-- **Focusrite Scarlett 2i2** - Audio interface
+- **Squier Stratocaster** - A reliable blade for any assassin
+- **JCraft S3** - Precision instrument for precision work
+- **Focusrite Scarlett 2i2** - The audio interface of choice for stealthy operations
 
 Works great with direct instrument input or through professional audio interfaces!
 
@@ -202,9 +202,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- FFT algorithm implementation using SciPy
-- CustomTkinter for the modern UI framework
-- PyAudio for audio input handling
+- FFT algorithm implementation using SciPy - The mathematical hidden blade
+- CustomTkinter for the modern UI framework - Sleek as an assassin's robes
+- PyAudio for audio input handling - Eagle Vision for sound
+- Countless espressos - The true fuel behind every commit ☕
 
 ## 📧 Contact
 
@@ -240,8 +241,8 @@ Project Link: [https://github.com/waynefaustorilla/guitar-tuner](https://github.
 ### ☕ Support the Developer
 
 If this tuner helped you nail that perfect pitch, consider:
- 
-**Buying me an espresso** - Fuel the caffeine-powered code that keeps this tuner sharp!
+- **Hiring me** - I promise to bring the same precision to your projects (and way less feedback than a guitar amp)
+- **Buying me an espresso** - Fuel the caffeine-powered code that keeps this tuner sharp!
 
 *Warning: May cause spontaneous guitar solos and perfectly tuned instruments*
 

@@ -36,3 +36,8 @@ class TuningSelector:
 
     def get_current_tuning(self) -> str:
         return self.combo.get()
+
+    def update_tunings(self, tuning_names: list):
+        self.combo.configure(values=tuning_names)
+        if tuning_names:
+            self.set_tuning(tuning_names[0])

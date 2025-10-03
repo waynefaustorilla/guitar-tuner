@@ -6,6 +6,7 @@ from .status_display import StatusDisplay
 from .control_buttons import ControlButtons
 from .custom_tuning_dialog import CustomTuningDialog
 from .instrument_selector import InstrumentSelector
+from .splash_screen import SplashScreen, SplashScreenManager
 
 __all__ = [
     'TuningMeterWidget',
@@ -15,5 +16,7 @@ __all__ = [
     'StatusDisplay',
     'ControlButtons',
     'CustomTuningDialog',
-    'InstrumentSelector'
+    'InstrumentSelector',
+    'SplashScreen',
+    'SplashScreenManager'
 ]
